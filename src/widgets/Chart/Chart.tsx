@@ -12,6 +12,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { Props } from "recharts/types/container/Surface";
 
 const data = [
   {
@@ -58,28 +59,22 @@ const data = [
   },
 ];
 
-export default class Example extends PureComponent {
-  static demoUrl = "https://codesandbox.io/s/simple-bar-chart-tpz8r";
+const Chart = (props: Props) => {
+  return (
+    <Card title="Graphique" col={2} row={1}>
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart width={100} height={100} data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          {/* <Legend /> */}
+          <Bar dataKey="pv" fill="var(--color-primary)" />
+          <Bar dataKey="uv" fill="var(--color-secondary)" />
+        </BarChart>
+      </ResponsiveContainer>
+    </Card>
+  );
+};
 
-  render() {
-    return (
-      <Card title="Graphique" col={2} row={1}>
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            width={100}
-            height={100}
-            data={data}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            {/* <Tooltip /> */}
-            {/* <Legend /> */}
-            <Bar dataKey="pv" fill="var(--color-primary)" />
-            <Bar dataKey="uv" fill="var(--color-secondary)" />
-          </BarChart>
-        </ResponsiveContainer>
-      </Card>
-    );
-  }
-}
+export default Chart;

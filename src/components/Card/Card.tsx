@@ -54,7 +54,7 @@ const Card = (props: Props) => {
         onClick={props.clickcallback}
         {...attrs}
       >
-        <motion.div className={styles.cardDynamicBackground} initial={{ width: 0}} animate={{ width: "100%"}} transition={{ type: "spring"}} />
+        {/* <motion.div className={styles.cardDynamicBackground} initial={{ width: 0}} animate={{ width: "100%"}} transition={{ type: "spring"}} /> */}
         <div className={styles.card__header}>
           <h3 className="card__title">{props.title}</h3>
           <span className="card__icon">{props.icon}</span>

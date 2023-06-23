@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import QueryBuilderTwoToneIcon from "@mui/icons-material/QueryBuilderTwoTone";
 import Card from "../../components/Card/Card";
 import { format } from "date-fns";
+import eoLocal from "date-fns/locale/fr";
 import styles from "./clock.module.css";
 type Props = {
   username: string;
+  col: number;
+  row: number;
 };
 
 const Clock = (props: Props) => {
@@ -13,7 +16,7 @@ const Clock = (props: Props) => {
   // Update the time every second
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(format(new Date(), "h:mm:ss a"));
+      setTime(format(new Date(), "HH:mm:ss a", { locale: eoLocal}));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -24,8 +27,8 @@ const Clock = (props: Props) => {
       icon={<QueryBuilderTwoToneIcon />}
       footer={format(new Date(), "EEEE, MMMM d, yyyy")}
       alignCenter={true}
-      col={2}
-      row={1}
+      col={props.col}
+      row={props.row}
     >
       <span className={styles.time}>{time}</span>
     </Card>

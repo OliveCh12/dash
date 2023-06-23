@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import SaveIcon from '@mui/icons-material/Save';
 import Card from "../../components/Card/Card";
@@ -6,7 +6,10 @@ import Button from "../../components/Button/Button";
 
 import styles from "./notepad.module.css";
 
-type Props = {};
+type Props = {
+  col: number;
+  row: number;
+};
 
 const Notepad = (props: Props) => {
   const [text, setText] = useState("");
@@ -14,6 +17,18 @@ const Notepad = (props: Props) => {
   function handleInputChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setText(e.target.value);
   }
+
+  useEffect(() => {
+    const words = text.split(' ');
+    const lastWord = words[words.length - 1];
+    const coloredLastWord = `<span style="color: red;">${lastWord}</span>`;
+    const formattedText = words.slice(0, -1).join(' ') + ' ' + coloredLastWord;
+
+    console.log(lastWord)
+    // setText(formattedText);
+  }, [text]);
+
+  
   return (
     <Card
       title="Notepad"
