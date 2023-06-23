@@ -1,0 +1,48 @@
+ @import "../../styles/variables.css";
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.3rem;
+  align-items: center;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.secondary {
+  background-color: var(--color-secondary);;
+  color: black;
+}
+
+.danger {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+.warning {
+  background-color: var(--color-warning);
+  color: white;
+}
+
+.success {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.medium {
+  font-size: 16px;
+}
+
+.large {
+  font-size: 20px;
+}

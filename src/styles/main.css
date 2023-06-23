@@ -1,0 +1,9 @@
+body {
+    position: relative;
+    /* background-color: var(--color-background); */
+    width: 240px;
+    height: 240px;
+    background-color: var(--color-background);
+
+}
+

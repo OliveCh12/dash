@@ -1,0 +1,65 @@
+/* Declare variables colors in CSS */
+:root {
+    --color-primary: #FF8551;
+    --color-secondary: #9BCDD2;
+    --color-tertiary: #FFDEDE;
+    --color-background: #FAF0E4;
+
+    /* --color-primary: #FF8551;
+    --color-secondary: #E5D1FA;
+    --color-tertiary: #E3DFFD;
+    --color-background: #ECF2FF; */
+
+    --color-primary: #FF2171;
+    --color-secondary: #E5D1FA;
+    --color-tertiary: #E3DFFD;
+    --color-background: #ECF2FF;
+
+    /* --color-primary: #E74646;
+    --color-secondary: #FA9884;
+    --color-tertiary: #FFE5CA;
+    --color-background: #FFF3E2; */
+
+/* 
+    --color-primary: #A0C49D;
+    --color-secondary: #C4D7B2;
+    --color-tertiary: #E1ECC8;
+    --color-background: #F7FFE5;
+
+    --color-primary: #B2A4FF;
+    --color-secondary: #D9ACF5;
+    --color-tertiary: #FFCEFE;
+    --color-background: #FDEBED; */
+
+
+    /* --color-primary: #AAE3E2;
+    --color-secondary: #D9ACF5;
+    --color-tertiary: #FFCEFE;
+    --color-background: #FDEBED; */
+
+    /* --color-primary: #645CBB;
+    --color-secondary: #A084DC;
+    --color-tertiary: #BFACE2;
+    --color-background: #EBC7E6; */
+
+    --color-danger: #FF4D4D;
+    --color-warning: #FFC857;
+    --color-success: #00C2BA;
+    --color-info: #3B5B92;
+
+    @media (prefers-color-scheme: dark) {
+        --color-primary: #00c2ba;
+        --color-secondary: #FF4C29;
+        --color-tertiary: #5B8FB9;
+        --color-background: #030d14;
+        --color-foreground: #04141f;
+        --color-foreground-accent: #04141f;
+
+
+        --color-danger: #FF4D4D;
+        --color-warning: #FFC857;
+        --color-success: #00C2BA;
+        --color-info: #3B5B92;
+
+    }
+}

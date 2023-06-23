@@ -1,0 +1,11 @@
+.battery { 
+    border: 30px solid blue;
+    border-radius: 100px;
+    height:100px;
+    width:100px;
+}
+
+.level {
+    font-size: 2em;
+    font-weight: 600
+}
