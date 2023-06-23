@@ -49,10 +49,10 @@
 
     @media (prefers-color-scheme: dark) {
         --color-primary: #00c2ba;
-        --color-secondary: #FF4C29;
+        --color-secondary: #c12578;
         --color-tertiary: #5B8FB9;
-        --color-background: #030d14;
-        --color-foreground: #04141f;
+        --color-background: #000000;
+        --color-foreground: #0a0a0a;
         --color-foreground-accent: #04141f;
 
 
