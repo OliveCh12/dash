@@ -32,10 +32,10 @@
     --color-background: #FDEBED;
 
 
-    /* --color-primary: #AAE3E2;
+    --color-primary: #AAE3E2;
     --color-secondary: #D9ACF5;
     --color-tertiary: #FFCEFE;
-    --color-background: #FDEBED; */
+    --color-background: #FDEBED;
 
     /* --color-primary: #645CBB;
     --color-secondary: #A084DC;
@@ -52,7 +52,7 @@
         --color-secondary: #c12578;
         --color-tertiary: #5B8FB9;
         --color-background: #000000;
-        --color-foreground: #0a0a0a;
+        --color-foreground: #131313;
         --color-foreground-accent: #04141f;
 
 

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Cancel, Settings } from "@mui/icons-material";
 import Button from "../Button/Button";
 
 import styles from "./modal.module.css";
+import { set } from "date-fns";
 
 type Props = {
   title: string;
@@ -52,6 +53,27 @@ const Modal = (props: Props) => {
         </div>
       </div>
       <div className={styles.body}>{props.children}</div>
+      <Button color="primary" onClick={() => setIsVisible(!sidebarIsVisible)}>
+        Toggle
+      </Button>
+
+      <AnimatePresence>
+        {sidebarIsVisible && (
+          <motion.div
+            className={styles.settings}
+            initial={{ width: 0 }}
+            animate={{ width: 350 }}
+            exit={{ width: 0 }}
+          >
+            <section className={styles.settingsSection}>
+              <span className={styles.settingsElement}>Variant</span>
+              <span className={styles.settingsElement}>Settings</span>
+              <span className={styles.settingsElement}>Settings</span>
+              <span className={styles.settingsElement}>Settings</span>
+            </section>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className={styles.footer}>{props.footer}</div>
     </motion.div>
   );

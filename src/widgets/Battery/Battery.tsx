@@ -1,7 +1,7 @@
-import {useState} from 'react';
+import { useState, useEffect } from "react";
 import { useBattery } from "@uidotdev/usehooks";
 import { BatteryCharging50, Battery50 } from "@mui/icons-material";
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
 
 import Card from "../../components/Card/Card";
 import styles from "./battery.module.css";
@@ -13,8 +13,8 @@ type Props = {
 const Battery = (props: Props) => {
   const { loading, level, charging, chargingTime, dischargingTime } =
     useBattery();
-  
-    const COLORS = ['var(--color-primary)', 'var(--color-secondary)'];
+
+  const COLORS = ["var(--color-primary)", "var(--color-secondary)"];
 
   return (
     <Card
@@ -24,28 +24,29 @@ const Battery = (props: Props) => {
       color={props.colors}
       alignCenter={true}
     >
-      <span class={styles.level}>{level * 100} %</span>
+      {JSON.stringify({ chargingTime, dischargingTime })}
 
-      {/* <span>{chargingTime}</span>
-      <span>{dischargingTime}</span> */}
-      <PieChart width={300} height={300}>
-        <Pie
-          data={[
-            { name: 'Level %', value: level * 100 },
-            { name: 'Total %', value: 100 },
-          ]}
-          cx={100}
-          cy={100}
-          innerRadius={60}
-          outerRadius={80}
-          fill="#8884d8"
-          paddingAngle={5}
-          dataKey="value"
-        >
-          <Cell key={`cell-1`} fill={COLORS[0]} />
-          <Cell key={`cell-2`} fill={COLORS[1]} />
-        </Pie>
-      </PieChart>
+      {/* <span className={styles.level}>{level * 100} %</span> */}
+
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart width={350} height={350} className={styles.batteryChart}>
+          <Pie
+            data={[
+              { name: "Level %", value: level * 100 },
+              { name: "Total %", value: 100 },
+            ]}
+            cx={150}
+            cy={90}
+            innerRadius={50}
+            outerRadius={80}
+            paddingAngle={0}
+            dataKey="value"
+          >
+            <Cell key={`cell-1`} fill={COLORS[0]} />
+            <Cell key={`cell-2`} fill={COLORS[1]} />
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
     </Card>
   );
 };
