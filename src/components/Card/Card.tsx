@@ -10,6 +10,7 @@ import styles from "./card.module.css";
 type Props = {
   title: string;
   children: React.ReactNode;
+  settingsChildren?: React.ReactNode;
   footer?: React.ReactNode;
   isLoading?: boolean;
   isClickcable?: boolean;
@@ -51,6 +52,7 @@ const Card = (props: Props) => {
           stiffness: 300,
           type: "spring",
         }}
+        // whileTap={{ scale: 0.95, opacity: 0.8 }}
         onClick={props.clickcallback}
         {...attrs}
       >
@@ -83,6 +85,7 @@ const Card = (props: Props) => {
             onClose={() => setIsOpen(false)}
             footer={props.footer}
             color={props.color}
+            settingsChildren={props.settingsChildren}
           >
             {props.children}
           </Modal>

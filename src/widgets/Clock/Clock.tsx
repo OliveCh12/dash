@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import QueryBuilderTwoToneIcon from "@mui/icons-material/QueryBuilderTwoTone";
 import Card from "../../components/Card/Card";
+import Select from "../../components/Select/Select";
 import { format } from "date-fns";
 import eoLocal from "date-fns/locale/fr";
 import styles from "./clock.module.css";
@@ -29,6 +30,21 @@ const Clock = (props: Props) => {
       alignCenter={true}
       col={props.col}
       row={props.row}
+      settingsChildren={
+        <>
+          <h2>Customisation</h2>
+
+          <Select items={[
+            "12-hour",
+            "24-hour",
+          ]} />
+          <Select items={[
+            "Small",
+            "Medium",
+            "Large",
+          ]} />       
+        </>
+      }
     >
       <span className={styles.time}>{time}</span>
     </Card>

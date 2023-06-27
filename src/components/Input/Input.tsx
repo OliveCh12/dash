@@ -1,4 +1,4 @@
-import React from "react";
+import styles from "./input.module.css";
 
 type Props = {
   type: "text" | "password" | "email" | undefined;
@@ -10,11 +10,14 @@ type Props = {
   pattern?: string;
   spellcheck?: boolean;
   autocorrect?: "on" | "off" | undefined;
+  value?: any;
+  onChange?: (e: any) => void;
 };
 
 const Input = (props: Props) => {
   return (
     <input
+      className={styles.input}
       name={props.name}
       type={props.type}
       maxLength={props.maxlength}
@@ -24,6 +27,8 @@ const Input = (props: Props) => {
       pattern={props.pattern}
       spellCheck={props.spellcheck}
       autoCorrect={props.autocorrect}
+      value={props.value}
+      onChange={props.onChange}
     />
   );
 };

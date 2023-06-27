@@ -16,6 +16,9 @@ const Bookmark = (props: Props) => {
       className={
         bookmarkClassName === styles.list ? styles.listItem : styles.gridItem
       }
+      initial={{ scale: 0.9, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0.9, opacity: 0 }}
       whileHover={{ opacity: 0.7 }}
       whileTap={{ scale: 0.9, opacity: 0.8 }}
       onClick={() => window.open(props.url, "_blank")}

@@ -16,9 +16,13 @@ function App() {
     <>
       <Header username="Ashley" />
       <Grid gap="medium">
-        <Clock username="Ashley" col={2}/>
+        <Clock username="Ashley" col={2} />
+        <Bookmarks title="Shopping" color="var(--color-primary)" display="list"  col={1} row={2}/>
+        <Bookmarks title="Tools" color="var(--color-tertiary)" display="grid" />
         <Calendar />
         <Battery />
+        <Bookmarks title="Tools" color="var(--color-secondary)" display="grid" />
+
         {/* <Timer /> */}
         <Notepad />
         <Switch title="Air Condition" />
@@ -26,9 +30,7 @@ function App() {
         <Chart />
 
         <Bookmarks title="Socials Networks" display="list"/>
-        <Bookmarks title="Shopping" color="var(--color-primary)" display="list"  col={1} row={2}/>
-        <Bookmarks title="Tools" color="var(--color-secondary)" display="grid" />
-        <Bookmarks title="Tools" color="var(--color-tertiary)" display="grid" />
+
         <Switch title="Lights" />
 
         

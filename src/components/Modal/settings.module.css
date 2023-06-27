@@ -1,0 +1,38 @@
+@import "../../styles/variables.css";
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    height: calc(100% - 60px);
+    border-radius: 0px 0 0 20px;
+    border-right: var(--border);
+    display: flex;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: var(--color-foreground);
+}
+
+.settingsElement {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.settingsColors {
+    display: flex;
+    gap: 1rem;
+    /* justify-content: space-between; */
+}
+
+.settingsColorItem {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.4)
+}
